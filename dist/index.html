@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f2">
-  <meta name="description" content="Goodleap 的小小项目宇宙。探索星辰大海，或跟着鹈鹕在海边慢骑。保持好奇，从这里出发。">
-  <title>Goodleap · 从这里出发</title>
+  <meta name="description" content="探索星辰大海，跟着鹈鹕在海边慢骑，或驾驶飞船挑战星际闪避。保持好奇，从这里出发。">
+  <title>Home</title>
   <style>
     :root { color-scheme: light; --paper:#f7f7f2; --ink:#242622; --muted:#666d63; --line:#dedfd6; --accent:#d85c39; }
     * { box-sizing:border-box; }
@@ -18,8 +18,7 @@
     .skip { position:absolute; top:12px; left:12px; z-index:10; background:var(--paper); padding:12px 18px; transform:translateY(-160%); }
     .skip:focus { transform:none; }
     .header { height:112px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
-    .brand { display:inline-flex; align-items:center; gap:12px; font-size:23px; font-weight:650; letter-spacing:-.8px; }
-    .brand-mark { width:29px; height:29px; }
+    .home-link { display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:500; letter-spacing:1px; }
     .header-nav { display:flex; gap:30px; align-items:center; font-size:12px; }
     .home-label { color:var(--muted); letter-spacing:1.8px; }
     .nav-projects { display:flex; gap:10px; align-items:center; padding:10px 0; }
@@ -38,13 +37,14 @@
     h2 { margin:0; font-size:12px; font-weight:500; letter-spacing:1px; }
     .section-heading h2 span { color:#666d63; font-size:10px; margin-left:11px; letter-spacing:1.6px; }
     .count { font:11px/1.5 "SFMono-Regular",Consolas,monospace; color:var(--muted); }
-    .projects { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 32px; }
     .project { display:block; min-width:0; border-radius:13px; }
     .art { position:relative; aspect-ratio:1.78; border-radius:12px; overflow:hidden; isolation:isolate; }
     .art svg { display:block; width:100%; height:100%; transition:transform .7s cubic-bezier(.2,.6,.3,1); }
     .project:hover .art svg { transform:scale(1.035); }
     .space-art { background:#131f24; }
     .coast-art { background:#dce8e5; }
+    .drift-art { background:#202137; }
     .art-label { position:absolute; top:21px; left:23px; font:10px/1.3 "SFMono-Regular",Consolas,monospace; letter-spacing:1.6px; color:#d0ddd9; z-index:1; }
     .coast-art .art-label { color:#536c65; }
     .art-corner { position:absolute; right:23px; bottom:20px; font:9px/1.3 "SFMono-Regular",Consolas,monospace; letter-spacing:1.2px; color:#bccbc8; }
@@ -58,7 +58,7 @@
     .arrow { width:40px; height:40px; display:grid; place-items:center; border-radius:50%; border:1px solid #d2d6c9; flex:none; transition:background .25s,color .25s,border-color .25s,transform .25s; }
     .arrow svg { width:18px; height:18px; }
     .project:hover .arrow { background:var(--ink); border-color:var(--ink); color:var(--paper); transform:translate(2px,-2px); }
-    .footer { margin-top:66px; padding:23px 0 31px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:20px; color:var(--muted); font-size:10px; letter-spacing:.8px; }
+    .footer { margin-top:66px; padding:23px 0 31px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:flex-end; gap:20px; color:var(--muted); font-size:10px; letter-spacing:.8px; }
     .footer-note { display:flex; gap:8px; align-items:center; }
     .footer-note .dot { width:4px; height:4px; background:#74846b; }
     @media (min-width:1600px) { .hero { padding-top:90px; padding-bottom:80px; } }
@@ -80,8 +80,6 @@
     @media (max-width:600px) {
       .shell { width:calc(100% - 40px); }
       .header { height:79px; }
-      .brand { font-size:21px; gap:9px; }
-      .brand-mark { width:26px; height:26px; }
       .home-label { display:none; }
       .header-nav { gap:0; }
       .hero { display:block; padding:46px 0 42px; }
@@ -108,10 +106,7 @@
   <a class="skip" href="#projects">跳到项目导航</a>
   <div class="shell">
     <header class="header">
-      <a class="brand" href="./" aria-label="Goodleap 首页">
-        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 28V4h17v7H10v10h11V11h7v17H3Z" fill="currentColor"/><path d="M21 4h7v7h-7z" fill="#d85c39"/></svg>
-        <span>goodleap<span style="color:var(--accent)">.</span></span>
-      </a>
+      <a class="home-link" href="./" aria-current="page">首页</a>
       <nav class="header-nav" aria-label="主导航">
         <span class="home-label" aria-hidden="true">PERSONAL SPACE</span>
         <a class="nav-projects" href="#projects">探索项目 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v13m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.4"/></svg></a>
@@ -131,7 +126,7 @@
       <section id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
           <h2 id="projects-title">项目导航 <span lang="en">SELECTED PROJECTS</span></h2>
-          <span class="count" aria-label="共 2 个项目">02 / PROJECTS</span>
+          <span class="count" aria-label="共 3 个项目">03 / PROJECTS</span>
         </div>
         <div class="projects">
           <!-- GitHub Pages 项目站点是同级目录；请保留 ../ 相对链接。 -->
@@ -214,10 +209,52 @@
             <p class="project-description" id="pelican-description">跟着鹈鹕沿海慢骑，把时间交给风，把心情交给远方。</p>
             <span class="project-slug" aria-hidden="true">slow-coast-pelican</span>
           </a>
+          <a class="project" href="../star-drift/" aria-labelledby="drift-title" aria-describedby="drift-description">
+            <div class="art drift-art">
+              <span class="art-label" aria-hidden="true">03 — INTO THE STARFIELD</span>
+              <svg viewBox="0 0 600 337" fill="none" aria-hidden="true" focusable="false">
+                <defs>
+                  <radialGradient id="drift-bg" cx=".56" cy=".55" r=".78"><stop stop-color="#42415c"/><stop offset="1" stop-color="#171c30"/></radialGradient>
+                  <linearGradient id="drift-trail" x1="266" y1="206" x2="149" y2="302" gradientUnits="userSpaceOnUse"><stop stop-color="#f2c194" stop-opacity=".85"/><stop offset="1" stop-color="#d78381" stop-opacity="0"/></linearGradient>
+                  <linearGradient id="drift-hull" x1="272" y1="162" x2="344" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#f8efda"/><stop offset="1" stop-color="#b1baca"/></linearGradient>
+                </defs>
+                <path fill="url(#drift-bg)" d="M0 0h600v337H0z"/>
+                <g stroke="#8b92ad" stroke-width=".65" opacity=".16"><path d="m56 337 327-337m-199 337 327-337M0 257 249 0M0 193h600M0 278h600"/></g>
+                <g fill="#e0ddd4"><circle cx="74" cy="101" r="1.2"/><circle cx="206" cy="78" r="1.3" opacity=".5"/><circle cx="378" cy="71" r="1"/><circle cx="524" cy="166" r="1.1"/><circle cx="555" cy="267" r="1.4" opacity=".5"/><circle cx="411" cy="280" r="1"/><circle cx="88" cy="273" r="1.1"/><circle cx="165" cy="219" r="1" opacity=".5"/><circle cx="337" cy="249" r=".8"/><circle cx="286" cy="65" r=".7"/></g>
+                <path d="m280 197-139 115 107-139" fill="url(#drift-trail)"/>
+                <path d="m260 206-59 49" stroke="#f8dbad" stroke-width="2" opacity=".75"/>
+                <path d="m254 217-73 62" stroke="#edb6a0" stroke-width="1" opacity=".4"/>
+                <g stroke="#999caf" stroke-width="1.1" stroke-linejoin="round">
+                  <path d="m120 123 21-24 34 7 16 29-11 27-33 8-30-20 3-27Z" fill="#626678"/>
+                  <path d="m141 99 11 33 39 3-33 16-11 19-30-20 35-18" fill="#4d5468"/>
+                  <path d="m460 193 24-12 24 14 6 26-19 20-30-9-13-22 8-17Z" fill="#747080"/>
+                  <path d="m484 181-6 28 17 32 19-20-36-12-13 23" fill="#53586d"/>
+                  <path d="m406 115 10-9 16 4 5 16-12 10-17-5-2-16Z" fill="#60667c"/>
+                </g>
+                <g transform="rotate(43 300 168)" stroke-linejoin="round">
+                  <path d="m300 111-39 94 39-17 39 17-39-94Z" fill="url(#drift-hull)" stroke="#e5e6dc" stroke-width="1.4"/>
+                  <path d="m300 111 0 77 39 17-39-94Z" fill="#a1adbf"/>
+                  <path d="m300 139-10 30h20l-10-30Z" fill="#627a94" stroke="#d0d8d4" stroke-width="1"/>
+                  <path d="m290 192 10 29 10-29" fill="#e9b08b"/>
+                  <path d="m296 192 4 19 4-19" fill="#fff2c9"/>
+                  <path d="m271 181-10 24 21-9m47-15 10 24-21-9" stroke="#dba59a" stroke-width="3"/>
+                </g>
+                <g fill="#e7c886"><path d="m372 148 4 11 11 4-11 4-4 11-4-11-11-4 11-4 4-11Z"/><path d="m435 75 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z"/><path d="m213 131 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/></g>
+                <circle cx="372" cy="163" r="23" stroke="#e7c886" stroke-width=".7" opacity=".25"/>
+              </svg>
+              <span class="art-corner" aria-hidden="true">DODGE. COLLECT. REPEAT.</span>
+            </div>
+            <div class="project-info">
+              <div class="project-name"><h3 id="drift-title">星际闪避</h3><span class="category">街机游戏</span></div>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.4"/></svg></span>
+            </div>
+            <p class="project-description" id="drift-description">驾驶飞船躲开陨石、收集星光，挑战你的最高纪录。</p>
+            <span class="project-slug" aria-hidden="true">star-drift</span>
+          </a>
         </div>
       </section>
     </main>
-    <footer class="footer"><span>© 2026 Goodleap</span><span class="footer-note"><span class="dot" aria-hidden="true"></span>保持好奇，慢慢创造。</span></footer>
+    <footer class="footer"><span class="footer-note"><span class="dot" aria-hidden="true"></span>保持好奇，慢慢创造。</span></footer>
   </div>
 </body>
 </html>

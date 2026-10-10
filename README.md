@@ -1,4 +1,4 @@
-# goodleap · 项目导航
+# 项目导航首页
 
 简洁的静态导航首页，无需安装依赖或构建，打开 `index.html` 即可查看。
 
@@ -8,10 +8,11 @@
 | --- | --- |
 | 星辰大海 | `../stellar-voyage/` |
 | 海风慢骑 | `../slow-coast-pelican/` |
+| 星际闪避 | `../star-drift/` |
 
-首页部署到 GitHub Pages 的 `/home/` 后，以上链接会分别跳转到同一域名下的 `/stellar-voyage/` 和 `/slow-coast-pelican/`。导航不绑定域名，也不使用以 `/` 开头的绝对路径。
+首页部署到 GitHub Pages 的 `/home/` 后，以上链接会分别跳转到同一域名下的 `/stellar-voyage/`、`/slow-coast-pelican/` 和 `/star-drift/`。部署在域名根目录时，这三个相对链接也会解析到同样的目标路径。页面不包含固定网站名，导航不绑定域名，也不使用以 `/` 开头的绝对路径。
 
-各目标仓库需要分别配置 GitHub Pages；尤其是 `slow-coast-pelican`，仅添加导航链接不会启用它的 Pages。
+各目标仓库需要分别配置 GitHub Pages；仅添加导航链接不会启用它的 Pages。使用自定义域名时，该域名下也需要能够访问三个目标项目的对应路径。
 
 ## 部署到 GitHub Pages
 
